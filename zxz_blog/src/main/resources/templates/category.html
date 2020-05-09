@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:http="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/login.css" type=text/css rel="stylesheet">
+    <link href="css/header.css" type=text/css rel="stylesheet">
+    <link href="css/paging.css" rel="stylesheet"/>
+    <link href="css/category.css" rel="stylesheet"/>
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+
+
+<script src="js/login.js"></script>
+<script src="js/category.js"></script>
+<script src="js/paging.js"></script>
+
+<!--导航条-->
+<div th:replace="header :: nav"></div>
+<div class="content">
+    <div class="container main_body">
+        <div class="row">
+        <div class=" col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+            <h4 >分类</h4>
+            <ul class="list-group " id="category_list">
+
+
+                <li class="list-group-item category_articles">
+                    <span style="display: none" >id</span>
+                    <span class="badge">14</span>
+                    机器学习
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 ">
+            <h4 style="display: none" id="cur_category_id"></h4>
+            <h4 id="cur_category">>>简介</h4>
+            <div class="category_blog_list" id="category_article_list">
+                <div class="category_blog_item">
+
+                    <div class=" container blog_div_item border_shadow padding_left_right_small margin_buttom_middle">
+
+                        <div><h4>机器学习为什么不活了</h4></div>
+
+
+                        <hr  style="width: 670px;background-color: darkgrey;height: 1px;border: none">
+                        <div class=" category_blog_item_icon" >
+                            <div class="category_blog_yuanchuang"><span>原创</span></div>
+
+                            <div class="category_blog_time">
+                                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+
+                                2020 3/20</div>
+                            <div class="category_blog_look">
+                                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                                8
+                            </div>
+                            <div class="category_blog_zan">
+                                <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                                8
+                            </div>
+                            <div class="category_blog_say">
+                                <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                                8
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+            <!--分页-->
+            <div class="container box" id="box"></div>
+            <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';"> </div>
+
+
+
+
+
+
+        </div>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+<footer>
+    <div class="container down">
+
+    </div>
+</footer>
+
+</body>
+</html>

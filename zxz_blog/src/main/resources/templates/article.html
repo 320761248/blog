@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:http="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../css/blog.css" rel="stylesheet">
+    <link href="../css/login.css" type=text/css rel="stylesheet">
+    <link href="../css/header.css" type=text/css rel="stylesheet">
+
+
+    <style>
+        .icon {
+            width: 15px;
+            height: 15px;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+
+
+
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script th:inline="javascript">
+    var result = [[${article_result.data}]];
+
+
+</script>
+<!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+<!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+<!--[if lt IE 9]>
+<script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+-->
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+
+<script src="../editormd/editormd.js"></script>
+<script src="../editormd/lib/flowchart.min.js"></script>
+<script src="../editormd/lib/jquery.flowchart.min.js"></script>
+<script src="../editormd/lib/marked.min.js"></script>
+<script src="../editormd/lib/prettify.min.js"></script>
+<script src="../editormd/lib/raphael.min.js"></script>
+<script src="../editormd/lib/sequence-diagram.min.js"></script>
+<script src="../editormd/lib/underscore.min.js"></script>
+
+<script src="../js/article_show.js"> </script>
+<script src="../js/login.js"></script>
+<script src="../font/iconfont.js"></script>
+<script src="../js/head.js"></script>
+
+
+<div th:replace="header :: nav"></div>
+
+<div class="blog_content " >
+    <div class="container">
+
+        <div class="row content">
+
+
+            <!--左侧的目录-->
+            <div class="col-md-3 hidden-xs hidden-sm" style="margin-top: 40px" >
+                <div class="panel panel-warning">
+                    <div class="panel-heading">目录</div>
+                    <div class="panel-body"  id="article_dire">
+
+                    </div>
+                </div>
+            </div>
+
+
+            <!--右侧的正文-->
+            <div class="col-md-9 blog_background" style="padding-left: 30px;padding-right: 30px;">
+
+                <!--标题部分-->
+                <div class="page-header">
+                    <h1>机器学习为什么不活了</h1>
+                    <div class="row">
+                        <div id="article_yuanchuang" class="col-md-1 col-sm-1 col-xs-1  grey" style="width: 70px">原创</div>
+                        <div id="article_author" class="col-md-2 col-sm-2 col-xs-2  grey" style="width: 150px">我是你老汉C</div>
+                        <div id="article_time" class="col-md-3 col-sm-3 col-xs-3 actor_auth grey ">2020-04-24：36</div>
+                        <div id="article_look" class="col-md-2 col-sm-2 col-xs-2 actor_auth grey">阅读数 6</div>
+
+
+                    </div>
+                </div>
+
+
+                <!--正文部分-->
+                <div class="col-md-12 border_shadow" style="min-height:100px">
+
+                    <div id="article-view" style="padding: 0px;margin: 0px">
+                        <textarea style="display:none;" name="editormd-markdown-doc" id="my_article" ></textarea>
+                    </div>
+                </div>
+
+                <div class="row " id="last_next" style="margin-top: 20px">
+
+
+
+                </div>
+
+                <hr class="margin_buttom_middle">
+
+                <!--评论框部分-->
+                <div class="col-md-12">
+                    <textarea id="comment_content" style="width: 100%;height:100px">登陆后才可以评论</textarea>
+                    <div class=" pull-right btn-group" role="group" aria-label="...">
+                        <button type="button" class="btn btn-default " id="publish_comment">发表评论</button>
+
+                    </div>
+                </div>
+
+                <!--评论部分-->
+                <div class="row">
+                    <h3 class="col-md-12">评论</h3>
+                    <hr class="col-md-12">
+
+                    <!--评论条目-->
+                    <div class="col-md-12">
+                        <ul class="media-list vi all_comment_box">
+                            <li class="media comment_item" >
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img class="media-object comment_user_head" src="../img/head.jpg" >
+                                    </a>
+                                </div>
+                                <div class="media-body " >
+                                    <div>
+                                        <h4 class="media-heading"><span class="conment_user_name">我是你老汉</span>
+                                            <!--评论id-->
+                                            <span class="get_comment_id" style="display:none "></span>
+                                            <svg class="icon" aria-hidden="true">
+                                            <use xlink:href="#icon-xingbienv"></use>
+                                            </svg>
+                                            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# l楼</span>
+                                            </h4>
+
+
+                                    </div>
+
+                                    <p class="" >我靠</p>
+                                    <div class="row zan_response" >
+                                        <div class="col-md-2 col-sm-2 col-xs-2 " style="width:50px;margin-right: 0px;padding-right: 0px">
+                                            <!--comment_id-->
+                                            <span style="display: none"></span>
+                                            <!--是否已赞-->
+                                            <span style="display: none"></span>
+                                            <span class="glyphicon glyphicon-thumbs-up span_word" aria-hidden="true" onclick="zan(this)"></span>
+                                            <span>8</span></div>
+                                        <div class="col-md-2 col-sm-2 col-xs-2" style="width:100px;margin-right: 0px;padding-right: 0px">
+                                            <!--answere_id-->
+                                            <span style="display: none">1</span>
+                                            <!--answere_name-->
+                                            <span style="display: none">我是你老汉</span>
+                                            <!-- comment no-->
+                                            <span style="display: none">0</span>
+
+                                            <span  class="reply_t span_word" onclick="reply(this)">回复</span>
+                                        </div>
+                                    </div>
+
+
+
+                                    <!--评论内评论-->
+                                    <div class="second_reply_insert_address" id="reply_of_comment_item_1">
+                                        <ul class="media-list " >
+
+                                            <li class="media">
+                                                <div class="media-left">
+                                                    <a href="#">
+                                                        <img class="media-object comment_user_head" src="../img/head.jpg">
+                                                    </a>
+                                                </div>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading"></h4><span class="conment_user_name">邓先生</span>&nbsp;回复&nbsp;<span class="conment_user_name">我是你老汉C</span></h4>
+                                                    <p class="" >我靠</p>
+                                                    <div class="row zan_response" >
+                                                        <div class="col-md-2 col-sm-2 col-xs-2 " style="width:50px;margin-right: 0px;padding-right: 0px">
+                                                            <span class="glyphicon glyphicon-thumbs-up span_word" aria-hidden="true"></span>
+                                                            8</div>
+                                                        <div class="col-md-2 col-sm-2 col-xs-2 " >
+                                                            <!--answere_id-->
+                                                            <span style="display: none">id</span>
+                                                            <!--answere_name-->
+                                                            <span style="display: none">name</span>
+                                                            <!-- comment no-->
+                                                            <span style="display: none">0</span>
+                                                            <span  class="span_word reply_j" onclick="reply(this)">回复</span>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+
+
+                                </div>
+                                <div class="no_tag" id="comment_item_1">
+
+
+                                </div>
+
+                            <hr class="col-md-12">
+                        </li>
+
+
+                        </ul>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+</div>
+
+</body>
+</html>

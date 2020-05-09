@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:http="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>zxz的个人网站</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+
+    <![endif]-->
+    <link href="../css/index.css" type=text/css rel="stylesheet">
+    <link href="../css/login.css" type=text/css rel="stylesheet">
+    <link href="../css/header.css" type=text/css rel="stylesheet">
+    <link href="../css/paging.css" rel="stylesheet"/>
+
+</head>
+<body>
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="../js/index.js"></script>
+<script src="../js/login.js"></script>
+<script src="../js/paging.js"></script>
+
+
+
+
+
+
+<!-- 会员登录  -->
+<!--<div id='Login_start' style="position: absolute;" >-->
+<!--导航条-->
+<div th:replace="header :: nav"></div>
+
+<div class="container">
+
+    <div class="row row-offcanvas row-offcanvas-right content">
+        <!--左边-->
+        <div class="col-lg-8 col-xs-12 col-md-9  col-sm-12">
+            <div class="blog_background ">
+
+
+                <div >
+
+                    <div class=" row  " style="padding-left: 40px;padding-right: 40px" >
+                        <!--博客头-->
+                        <div class="blog_header">
+                            <h4 class="  col-xs-3 col-sm-3" style="font-weight: bold" >
+                                博客
+                            </h4>
+                            <h4 class="col-md-3 col-xs-3 col-sm-3 col-md-offset-6 col-xs-offset-6 col-sm-offset-6 " style="font-weight: bold;text-align:right;">
+                                共14篇
+                            </h4>
+                        </div>
+                        <hr style="margin-top:0px">
+                        <!--博客列表-->
+                        <div class="blog_list">
+
+                            <div class="blog_item" >
+
+                                <div style="display: none" >1</div>
+
+                                <h4 class="blog_title"  >查询失败</h4>
+
+                                <p class="blog_abstract" >机器学习为什么不活了机器学习为什么不活了机器学习为什么不活了z机器学习为什么不活了机器学习为什么不活了v</p>
+                                <!--第二行 图标啥的-->
+                                <div style="height: 20px">
+                                    <div class="blog_category" style="" >
+                                        <span class="glyphicon glyphicon-folder-open" aria-hidden="true" ></span>
+                                        <span >机器学习</span>
+                                    </div>
+                                    <div class="blog_label" >
+                                        <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+                                        <span >优化方法</span>
+                                    </div>
+                                    <div class="blog_time"  >
+                                        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                                        <span>2019/3/20</span>
+
+                                    </div>
+
+
+
+                                    <!--靠右-->
+                                    <div class="blog_read_num num_col pull-right hidden-xs"  >
+                                        <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                                        <span >10</span>
+                                    </div>
+                                    <div class="blog_zan_num num_col pull-right hidden-xs"  >
+                                        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                                        <span >10</span>
+                                    </div>
+                                    <div class="blog_say_num num_col pull-right hidden-xs"   >
+                                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                                        <span >10</span>
+                                    </div>
+
+                                </div>
+
+
+
+
+
+                                <hr style="color: grey">
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+                <!--分页-->
+                <div class="container box" id="box"></div>
+                <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';"> </div>
+
+            </div>
+
+
+        </div><!--/.col-xs-12.col-sm-9-->
+
+
+        <!--右边-->
+
+        <div class="col-lg-4 col-md-3  hidden-xs hidden-sm  sidebar-offcanvas" id="sidebar">
+
+            <div class="row">
+
+                <div class="col-xs-12" style="padding-left:10px">
+                    <div class="panel panel-warning" style="min-height: 400px;">
+                        <div class="panel-heading">
+                            <span>分类栏</span>
+                            <a href="#" style="float: right">更多>></a>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-group"  id="category_list">
+
+
+
+
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div class=" col-xs-12 list-group" style="padding-left:10px">
+                    <div class="panel panel-info" style="min-height: 200px;" >
+                        <div class="panel-heading">
+                            <span>标签栏</span>
+                            <a href="#" style="float: right">更多>></a>
+
+                        </div>
+                        <div class="panel-body">
+
+                            <ul class="list-group" id="label_list">
+                                <div style="float: left; margin: 5px 5px 5px 5px " >
+                                    <span class="label label-info label_jump" >Info</span>
+                                    <span  style="display: none"></span>
+                                </div>
+
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div><!--/row-->
+
+    <hr style="margin-bottom: 0px;padding-bottom: 0px">
+
+    <footer class="blog_background">
+        <p>&copy; Company 2014</p>
+    </footer>
+
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+.content{
+    margin-top: 100px;
+
+}
+.main_body{
+    width: 1200px !important;
+}
+.left_category_box{
+    width: 200px;
+    float: left;
+}
+.right_blogs_box{
+    width: 700px;
+    float: left;
+}
+
+.category_blog_item{
+    width: 700px;
+    height: 100px;
+    border: 1px solid darkgrey;
+    margin-bottom: 30px;
+
+}
+.category_blog_yuanchuang{
+    width:50px;margin-right: 20px;padding-right: 0px;
+    float: left;
+
+}
+.category_blog_time{
+    width:100px;margin-right: 20px;padding-right: 0px;
+    float: left;
+}
+.category_blog_look{
+    width:50px;margin-right: 20px;padding-right: 0px;
+    float: left;
+}
+.category_blog_zan{
+    width:50px;margin-right: 20px;padding-right: 0px;
+    float: left;
+}
+.category_blog_say{
+    width:50px;margin-right: 20px;padding-right: 0px;
+    float: left;
+}
+.category_articles:hover{
+    background-color: darkgray !important;
+}

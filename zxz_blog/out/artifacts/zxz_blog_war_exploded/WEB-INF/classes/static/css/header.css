@@ -1,0 +1,46 @@
+
+li{
+    list-style: none;
+}
+
+.user_menu{
+    /*display: none;*/
+    position: absolute !important;
+
+
+}
+
+.navbar-nav>li{
+    color: #505354;
+}
+
+.blog_background{
+
+    background-color: white !important;
+    border: 1px solid #ddd !important;
+    box-shadow: 1px 1px 1px #BEBEBE !important;
+}
+.nav_blog_background{
+    background-color: lightpink !important;
+}
+#navbar a{
+    color: grey ;
+}
+.user_menu button{
+    width: 100px !important;
+}
+.user_menu_item{
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+
+}
+.user_head{
+    position: relative !important;
+
+}
+
+.user_menu{
+    display: none;
+}

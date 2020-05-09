@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:http="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+<script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<link rel="stylesheet" href="editormd/css/editormd.css" />
+<link href="css/article_writer.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="editormd/editormd.min.js"></script>
+<script src="js/editor.js"></script>
+
+
+<body>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+
+<div class="">
+        <input type="text" id="article_title" class="title_input"  style="width: 90%;height:35px;padding:0px ;margin:0px ;border: 2px solid grey; border-radius:5px ;box-sizing: border-box ;" placeholder="请输入标题" aria-describedby="basic-addon2">
+        <button type="button" class="btn btn-primary   " data-toggle="modal" data-target=".bs-example-modal-sm">发表文章</button>
+
+        <div class="modal bs-example-modal-sm" tabindex="-1"  role="dialog" aria-labelledby="gridSystemModalLabel">
+            <div class="modal-dialog " role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="gridSystemModalLabel">Modal title</h4>
+                    </div>
+                    <div class=" container-fluid modal-body">
+                        <div class="row">
+                            <label class="col-md-2 col-sm-2 col-xs-2" style="height:50px;line-height: 50px">文章类别</label>
+
+
+                            <div class="col-md-8 col-sm-8 col-xs-8 " style="height:50px">
+                                <!--做一个弹出div-->
+
+
+                                <select class="category_btn btn btn-danger" id="category_choose" name="test" >
+                                    <option value="2" class="category_item" selected="selected">类别</option>
+                                    <div th:each="category,categoryStat: ${category_res.data}">
+                                        <option  th:text="${category.category_name}" value="1" class="category_item"></option>
+                                        <option  th:text="${category.id}" value="1" style="display: none" class="category_item"></option>
+                                    </div>
+
+
+
+                                </select>
+
+
+                            </div>
+
+
+
+                        </div>
+                        <div class="row">
+                            <label class="col-md-2 col-sm-2 col-xs-2" style="height:50px;line-height: 50px">选择标签</label>
+
+
+                            <div class="col-md-8 col-sm-8 col-xs-8 " style="height:50px;position: relative">
+                                <!--做一个弹出div-->
+                                <select class="label_btn btn btn-danger" id="label_choose" name="test" >
+                                    <option value="2" class="category_item" selected="selected">标签</option>
+                                    <div th:each="label,labelStat: ${label_res.data}">
+                                        <option  th:text="${label.label_name}" value="1" class="category_item"></option>
+                                        <option  th:text="${label.id}" value="1" style="display: none" class="category_item"></option>
+                                    </div>
+
+                                </select>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-primary" id="publish_blog">发布博客</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+</div>
+
+<div id="my-editormd" >
+
+    <textarea id="my-editormd-markdown-doc" name="my-editormd-markdown-doc" style="display:none;"></textarea>
+
+    <textarea id="my-editormd-html-code" name="my-editormd-html-code" style="display:none;"></textarea>
+</div>
+
+
+
+
+
+
+</body>
+</html>
